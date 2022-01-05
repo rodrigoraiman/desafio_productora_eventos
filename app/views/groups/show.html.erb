@@ -1,5 +1,18 @@
 <p id="notice"><%= notice %></p>
+<h1>Groups#show</h1>
 
+<table>
+  <thead>
+    <th>Nombre</th>
+    <th>Cant. conciertos</th>
+    <th>Fecha ultimo concierto</th>
+        <th>Nombre ult. concierto</th>
+    </thead>
+    <tbody>
+        <td><%= @group.name %></td>
+        
+    </tbody>
+</table>
 <p>
   <strong>Name:</strong>
   <%= @group.name %>
