@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_29_025043) do
+ActiveRecord::Schema.define(version: 2022_01_05_050917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "concert_groups", force: :cascade do |t|
+    t.bigint "concert_id"
+    t.bigint "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["concert_id"], name: "index_concert_groups_on_concert_id"
+    t.index ["group_id"], name: "index_concert_groups_on_group_id"
+  end
 
   create_table "concerts", force: :cascade do |t|
     t.string "name"
@@ -35,5 +44,7 @@ ActiveRecord::Schema.define(version: 2021_12_29_025043) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "concert_groups", "concerts"
+  add_foreign_key "concert_groups", "groups"
   add_foreign_key "concerts", "groups"
 end

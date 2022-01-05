@@ -21,4 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Se crearon las tablas Group y Concert mediante scaffold
